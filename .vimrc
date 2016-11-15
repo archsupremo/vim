@@ -79,6 +79,15 @@ Bundle 'cakebaker/scss-syntax.vim'
 
 filetype plugin indent on
 
+map <F2> :NERDTreeToggle<cr>
+map <F3> :TagbarToggle<cr>
+map <F4> :SyntasticCheck jshint --extract=auto<cr>
+map <F6> :lclose<cr>
+map <F7> :tabnext<cr>
+map <F8> :pclose<cr>
+
+let mapleader = ","
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -98,18 +107,8 @@ let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
 let g:syntastic_style_error_symbol = '✗'
 let g:syntastic_style_warning_symbol = '⚠'
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 let g:syntastic_javascript_checkers = ['jshint']
-
-map <F2> :NERDTreeToggle<cr>
-map <F3> :TagbarToggle<cr>
-map <F4> :SyntasticCheck jshint --extract=auto<cr>
-map <F6> :lclose<cr>
-map <F7> :tabnext<cr>
-map <F8> :pclose<cr>
-
-let mapleader = ","
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Make YCM compatible with UltiSnips
 let g:ycm_key_list_select_completion = ['<s-tab>', '<Down>', '<C-j>']
@@ -120,7 +119,6 @@ let g:UltiSnipsExpandTrigger = "<c-tab>"
 let g:UltiSnipsJumpForwardTrigger = "<c-tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 let g:UltiSnipsListSnippets = "<c-l>"
-
 
 let g:tern_show_argument_hints = 'on_hold'
 let g:tern_show_signature_in_pum = 0
