@@ -66,17 +66,17 @@ set nocompatible
 
 filetype off
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-Bundle 'gmarik/vundle'
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'nerdtree'
-Bundle 'tagbar'
-Bundle 'scrooloose/syntastic'
-Bundle 'nerdcommenter'
-Bundle 'tern_for_vim'
-Bundle 'cakebaker/scss-syntax.vim'
+"set rtp+=~/.vim/bundle/vundle/
+"call vundle#rc()
+"
+"Bundle 'gmarik/vundle'
+"Bundle 'Valloric/YouCompleteMe'
+"Bundle 'nerdtree'
+"Bundle 'tagbar'
+"Bundle 'scrooloose/syntastic'
+"Bundle 'nerdcommenter'
+"Bundle 'tern_for_vim'
+"Bundle 'cakebaker/scss-syntax.vim'
 
 filetype plugin indent on
 
