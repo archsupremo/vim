@@ -9,7 +9,6 @@
 " properly set to work with the Vim-related packages available in Debian.
 
 runtime! debian.vim
-colorscheme solarized
 
 " Uncomment the next line to make Vim more Vi-compatible
 " NOTE: debian.vim sets 'nocompatible'.  Setting 'compatible' changes numerous
@@ -81,6 +80,7 @@ Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
+Plugin 'altercation/vim-colors-solarized'
 "Plugin 'mattn/emmet-vim'
 
 call vundle#end()
@@ -92,6 +92,7 @@ map <F4> :SyntasticCheck jshint --extract=auto<cr>
 map <F6> :lclose<cr>
 map <F7> :tabnext<cr>
 map <F8> :pclose<cr>
+colorscheme solarized
 
 let mapleader = ","
 

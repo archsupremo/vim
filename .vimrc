@@ -9,7 +9,6 @@
 " properly set to work with the Vim-related packages available in Debian.
 
 runtime! debian.vim
-colorscheme solarized
 
 " Uncomment the next line to make Vim more Vi-compatible
 " NOTE: debian.vim sets 'nocompatible'.  Setting 'compatible' changes numerous
@@ -66,18 +65,25 @@ set nocompatible
 
 filetype off
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-Bundle 'gmarik/vundle'
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'nerdtree'
-Bundle 'tagbar'
-Bundle 'scrooloose/syntastic'
-Bundle 'nerdcommenter'
-Bundle 'tern_for_vim'
-Bundle 'cakebaker/scss-syntax.vim'
+Plugin 'gmarik/vundle'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'nerdtree'
+Plugin 'tagbar'
+Plugin 'scrooloose/syntastic'
+Plugin 'nerdcommenter'
+Plugin 'tern_for_vim'
+Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
+Plugin 'altercation/vim-colors-solarized'
+"Plugin 'mattn/emmet-vim'
 
+call vundle#end()
 filetype plugin indent on
 
 map <F2> :NERDTreeToggle<cr>
@@ -86,6 +92,7 @@ map <F4> :SyntasticCheck jshint --extract=auto<cr>
 map <F6> :lclose<cr>
 map <F7> :tabnext<cr>
 map <F8> :pclose<cr>
+colorscheme solarized
 
 let mapleader = ","
 
