@@ -66,18 +66,24 @@ set nocompatible
 
 filetype off
 
-"set rtp+=~/.vim/bundle/vundle/
-"call vundle#rc()
-"
-"Bundle 'gmarik/vundle'
-"Bundle 'Valloric/YouCompleteMe'
-"Bundle 'nerdtree'
-"Bundle 'tagbar'
-"Bundle 'scrooloose/syntastic'
-"Bundle 'nerdcommenter'
-"Bundle 'tern_for_vim'
-"Bundle 'cakebaker/scss-syntax.vim'
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
+Plugin 'gmarik/vundle'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'nerdtree'
+Plugin 'tagbar'
+Plugin 'scrooloose/syntastic'
+Plugin 'nerdcommenter'
+Plugin 'tern_for_vim'
+Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
+"Plugin 'mattn/emmet-vim'
+
+call vundle#end()
 filetype plugin indent on
 
 map <F2> :NERDTreeToggle<cr>
