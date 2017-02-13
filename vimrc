@@ -92,7 +92,7 @@ map <F4> :SyntasticCheck jshint --extract=auto<cr>
 map <F6> :lclose<cr>
 map <F7> :tabnext<cr>
 map <F8> :pclose<cr>
-colorscheme solarized
+"colorscheme solarized
 
 let mapleader = ","
 
