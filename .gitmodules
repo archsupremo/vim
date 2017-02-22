@@ -16,9 +16,6 @@
 [submodule "bundle/tagbar"]
 	path = bundle/tagbar
 	url = https://github.com/majutsushi/tagbar.git
-[submodule "bundle/syntastic"]
-	path = bundle/syntastic
-	url = https://github.com/vim-syntastic/syntastic.git
 [submodule "bundle/scss-syntax.vim"]
 	path = bundle/scss-syntax.vim
 	url = https://github.com/cakebaker/scss-syntax.vim.git
@@ -43,3 +40,9 @@
 [submodule "bundle/emmet-vim"]
 	path = bundle/emmet-vim
 	url = https://github.com/mattn/emmet-vim.git
+[submodule "bundle/--force"]
+	path = bundle/--force
+	url = https://github.com/vim-syntastic/syntastic.git
+[submodule "bundle/syntastic"]
+	path = bundle/syntastic
+	url = https://github.com/vim-syntastic/syntastic.git

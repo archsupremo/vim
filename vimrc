@@ -94,6 +94,8 @@ map <F7> :tabnext<cr>
 map <F8> :pclose<cr>
 "colorscheme solarized
 
+execute pathogen#infect()
+
 let mapleader = ","
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
