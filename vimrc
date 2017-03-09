@@ -69,7 +69,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'gmarik/vundle'
-"Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'nerdtree'
 Plugin 'tagbar'
 Plugin 'scrooloose/syntastic'
@@ -93,13 +93,16 @@ map <F4> :SyntasticInfo<cr>
 map <F6> :lclose<cr>
 map <F7> :TagbarToggle<cr>
 map <F8> :pclose<cr>
-"colorscheme solarized
 
+"colorscheme solarized
 "execute pathogen#infect()
 
 let mapleader = ","
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" Syntastic Options and Configuration
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -124,11 +127,12 @@ let g:syntastic_style_warning_symbol = '⚠'
 let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_c_checkers = ['gcc']
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-"" YouCompleteMe options
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" YouCompleteMe Options and Configuration
 
-"let g:ycm_show_diagnostics_ui = 1 "default 1
+let g:ycm_show_diagnostics_ui = 0 "default 1
 
 " will put icons in Vim's gutter on lines that have a diagnostic set.
 " Turning this off will also turn off the YcmErrorLine and YcmWarningLine
@@ -159,15 +163,20 @@ let g:syntastic_c_checkers = ['gcc']
 "nnoremap <F10> :YcmForceCompileAndDiagnostics <CR>
 
 
-"" Make YCM compatible with UltiSnips
-"let g:ycm_key_list_select_completion = ['<s-tab>', '<Down>', '<C-j>']
-"let g:ycm_key_list_previous_completion = ['<c-tab>', '<Up>', '<C-k>']
-"
-"" Better key bindings for UltiSnipsExpandTrigger
-"let g:UltiSnipsExpandTrigger = "<c-tab>"
-"let g:UltiSnipsJumpForwardTrigger = "<c-tab>"
-"let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
-"let g:UltiSnipsListSnippets = "<c-l>"
-"
-"let g:tern_show_argument_hints = 'on_hold'
-"let g:tern_show_signature_in_pum = 0
+" Make YCM compatible with UltiSnips
+let g:ycm_key_list_select_completion = ['<s-tab>', '<Down>', '<C-j>']
+let g:ycm_key_list_previous_completion = ['<c-tab>', '<Up>', '<C-k>']
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" UltiSnips Options and Configuration
+
+" Better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<c-tab>"
+let g:UltiSnipsJumpForwardTrigger = "<c-tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+let g:UltiSnipsListSnippets = "<c-l>"
+
+let g:tern_show_argument_hints = 'on_hold'
+let g:tern_show_signature_in_pum = 0
