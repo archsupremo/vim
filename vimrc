@@ -23,7 +23,9 @@ endif
 
 " If using a dark background within the editing area and syntax highlighting
 " turn on this option as well
+
 set background=dark
+
 " Uncomment the following to have Vim jump to the last position when
 " reopening a file
 "if has("autocmd")
@@ -38,14 +40,16 @@ set background=dark
 
 " The following are commented out as they cause vim to behave a lot
 " differently from regular Vi. They are highly recommended though.
-"set showcmd		" Show (partial) command in status line.
-set showmatch		" Show matching brackets.
-set ignorecase		" Do case insensitive matching
-"set smartcase		" Do smart case matching
-set incsearch		" Incremental search
-set autowrite		" Automatically save before commands like :next and :make
-"set hidden		" Hide buffers when they are abandoned
-"set mouse=a		" Enable mouse usage (all modes)
+"
+"set showcmd   	  	" Show (partial) command in status line.
+"set smartcase 	  	" Do smart case matching
+"set hidden    	  	" Hide buffers when they are abandoned
+"set mouse=a   	  	" Enable mouse usage (all modes)
+
+set showmatch  	  	" Show matching brackets.
+set ignorecase 	  	" Do case insensitive matching
+set incsearch  	  	" Incremental search
+set autowrite  	  	" Automatically save before commands like :next and :make
 
 set ts=4
 set autoindent
@@ -90,8 +94,8 @@ filetype plugin indent on
 map <F2> :NERDTreeToggle<cr>
 map <F3> :tabnext<cr>
 map <F4> :SyntasticInfo<cr>
+map <F5> :TagbarToggle<cr>
 map <F6> :lclose<cr>
-map <F7> :TagbarToggle<cr>
 map <F8> :pclose<cr>
 
 "colorscheme solarized
@@ -133,6 +137,7 @@ let g:syntastic_c_checkers = ['gcc']
 "" YouCompleteMe Options and Configuration
 
 let g:ycm_show_diagnostics_ui = 0 "default 1
+let g:ycm_key_invoke_completion = '<C-Space>'
 
 " will put icons in Vim's gutter on lines that have a diagnostic set.
 " Turning this off will also turn off the YcmErrorLine and YcmWarningLine
@@ -147,7 +152,6 @@ let g:ycm_show_diagnostics_ui = 0 "default 1
 "let g:ycm_collect_identifiers_from_tags_files = 0 "default 0
 "let g:ycm_path_to_python_interpreter = '' "default ''
 "
-"
 "let g:ycm_server_use_vim_stdout = 0 "default 0 (logging to console)
 "let g:ycm_server_log_level = 'info' "default info
 "let g:ycm_warning_symbol = '>>'
@@ -158,7 +162,6 @@ let g:ycm_show_diagnostics_ui = 0 "default 1
 "
 "let g:ycm_goto_buffer_command = 'same-buffer' "[ 'same-buffer', 'horizontal-split', 'vertical-split', 'new-tab' ]
 "let g:ycm_filetype_whitelist = { '*': 1 }
-"let g:ycm_key_invoke_completion = '<C-Space>'
 "
 "nnoremap <F10> :YcmForceCompileAndDiagnostics <CR>
 
