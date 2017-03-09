@@ -69,7 +69,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'gmarik/vundle'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 Plugin 'nerdtree'
 Plugin 'tagbar'
 Plugin 'scrooloose/syntastic'
@@ -81,21 +81,21 @@ Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 Plugin 'altercation/vim-colors-solarized'
-"Plugin 'mattn/emmet-vim'
 "Plugin 'wookiehangover/jshint.vim'
+"Plugin 'mattn/emmet-vim'
 
 call vundle#end()
 filetype plugin indent on
 
 map <F2> :NERDTreeToggle<cr>
-map <F3> :TagbarToggle<cr>
-map <F4> :SyntasticCheck jshint --extract=auto<cr>
+map <F3> :tabnext<cr>
+map <F4> :SyntasticInfo<cr>
 map <F6> :lclose<cr>
-map <F7> :tabnext<cr>
+map <F7> :TagbarToggle<cr>
 map <F8> :pclose<cr>
 "colorscheme solarized
 
-execute pathogen#infect()
+"execute pathogen#infect()
 
 let mapleader = ","
 
@@ -119,13 +119,16 @@ let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
 let g:syntastic_style_error_symbol = '✗'
 let g:syntastic_style_warning_symbol = '⚠'
+
+" Checkers para los distintos lenguajes.
 let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_c_checkers = ['gcc']
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "" YouCompleteMe options
 
-let g:ycm_show_diagnostics_ui = 1 "default 1
+"let g:ycm_show_diagnostics_ui = 1 "default 1
 
 " will put icons in Vim's gutter on lines that have a diagnostic set.
 " Turning this off will also turn off the YcmErrorLine and YcmWarningLine
@@ -153,17 +156,18 @@ let g:ycm_show_diagnostics_ui = 1 "default 1
 "let g:ycm_filetype_whitelist = { '*': 1 }
 "let g:ycm_key_invoke_completion = '<C-Space>'
 "
-nnoremap <F10> :YcmForceCompileAndDiagnostics <CR>
+"nnoremap <F10> :YcmForceCompileAndDiagnostics <CR>
 
-" Make YCM compatible with UltiSnips
-let g:ycm_key_list_select_completion = ['<s-tab>', '<Down>', '<C-j>']
-let g:ycm_key_list_previous_completion = ['<c-tab>', '<Up>', '<C-k>']
 
-" Better key bindings for UltiSnipsExpandTrigger
-let g:UltiSnipsExpandTrigger = "<c-tab>"
-let g:UltiSnipsJumpForwardTrigger = "<c-tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
-let g:UltiSnipsListSnippets = "<c-l>"
-
-let g:tern_show_argument_hints = 'on_hold'
-let g:tern_show_signature_in_pum = 0
+"" Make YCM compatible with UltiSnips
+"let g:ycm_key_list_select_completion = ['<s-tab>', '<Down>', '<C-j>']
+"let g:ycm_key_list_previous_completion = ['<c-tab>', '<Up>', '<C-k>']
+"
+"" Better key bindings for UltiSnipsExpandTrigger
+"let g:UltiSnipsExpandTrigger = "<c-tab>"
+"let g:UltiSnipsJumpForwardTrigger = "<c-tab>"
+"let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+"let g:UltiSnipsListSnippets = "<c-l>"
+"
+"let g:tern_show_argument_hints = 'on_hold'
+"let g:tern_show_signature_in_pum = 0
