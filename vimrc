@@ -92,12 +92,32 @@ Plugin 'gilligan/vim-lldb'
 call vundle#end()
 filetype plugin indent on
 
+""""nnoremap th  :tabfirst<CR>
+""""nnoremap tj  :tabnext<CR>
+""""nnoremap tk  :tabprev<CR>
+""""nnoremap tl  :tablast<CR>
+""""nnoremap tt  :tabedit<Space>
+""""nnoremap tn  :tabnext<Space>
+""""nnoremap tm  :tabm<Space>
+""""nnoremap td  :tabclose<CR>
+""""
+""""" Alternatively use
+""""""nnoremap th :tabnext<CR>
+""""""nnoremap tl :tabprev<CR>
+
 map <F2> :NERDTreeToggle<cr>
 map <F3> :tabnext<cr>
 map <F4> :SyntasticInfo<cr>
 map <F5> :TagbarToggle<cr>
 map <F6> :lclose<cr>
 map <F8> :pclose<cr>
+
+
+"" To Horizontal switch the tabs
+"map <F12> :windo wincmd K<cr>
+
+"" To Vertical switch the tabs
+map <F12> :windo wincmd H<cr>
 
 "colorscheme solarized
 "execute pathogen#infect()
