@@ -37,6 +37,7 @@ set nu
 set tabstop=4 shiftwidth=4
 set expandtab
 setlocal omnifunc=syntaxcomplete#Complete
+set splitright
 
 " Source a global configuration file if available
 if filereadable("/etc/vim/vimrc.local")
