@@ -65,7 +65,6 @@ Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 Plugin 'altercation/vim-colors-solarized'
 "Plugin 'gilligan/vim-lldb'
-"Plugin 'wookiehangover/jshint.vim'
 "Plugin 'mattn/emmet-vim'
 
 call vundle#end()
