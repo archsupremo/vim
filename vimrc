@@ -102,6 +102,11 @@ map <F12> :windo wincmd H<cr>
 "execute pathogen#infect()
 
 let mapleader = ","
+:inoremap ( ()<Esc>i
+:inoremap [ []<Esc>i
+:inoremap { {}<Esc>i
+:inoremap " ""<Esc>i
+:inoremap ' ''<Esc>i
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
