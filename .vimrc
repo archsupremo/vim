@@ -69,7 +69,6 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'gmarik/vundle'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'nerdtree'
 Plugin 'tagbar'
 Plugin 'scrooloose/syntastic'
@@ -81,6 +80,8 @@ Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'vim-latex/vim-latex'
+"Plugin 'Valloric/YouCompleteMe'
 "Plugin 'mattn/emmet-vim'
 
 call vundle#end()

@@ -53,7 +53,6 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'nerdtree'
 Plugin 'tagbar'
 Plugin 'scrooloose/syntastic'
@@ -65,6 +64,7 @@ Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 Plugin 'altercation/vim-colors-solarized'
+"Plugin 'Valloric/YouCompleteMe'
 "Plugin 'gilligan/vim-lldb'
 "Plugin 'mattn/emmet-vim'
 
