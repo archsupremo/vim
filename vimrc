@@ -64,11 +64,16 @@ Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 Plugin 'altercation/vim-colors-solarized'
-"Plugin 'Valloric/YouCompleteMe'
 "Plugin 'gilligan/vim-lldb'
 "Plugin 'mattn/emmet-vim'
 
 call vundle#end()
+call plug#begin("~/.config/nvim/bundle/")
+Plug 'Valloric/YouCompleteMe'
+"Plug 'critiqjo/lldb.nvim'
+"Plug 'neovim/python-client'
+call plug#end()
+
 filetype plugin indent on
 
 """"nnoremap th  :tabfirst<CR>
