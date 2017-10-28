@@ -43,9 +43,6 @@
 [submodule "bundle/syntastic"]
 	path = bundle/syntastic
 	url = https://github.com/vim-syntastic/syntastic.git
-[submodule "bundle/vim-latex"]
-	path = bundle/vim-latex
-	url = https://github.com/vim-latex/vim-latex.git
 [submodule "bundle/vimtex"]
 	path = bundle/vimtex
 	url = https://github.com/lervag/vimtex

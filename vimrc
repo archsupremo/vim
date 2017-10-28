@@ -63,7 +63,7 @@ Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'lervag/vimtex'
+"Plugin 'lervag/vimtex'
 "Plugin 'gilligan/vim-lldb'
 "Plugin 'mattn/emmet-vim'
 call vundle#end()
@@ -71,7 +71,7 @@ call vundle#end()
 call plug#begin("~/.config/nvim/bundle/")
 
 Plug 'Valloric/YouCompleteMe'
-""Plug 'lervag/vimtex'
+Plug 'lervag/vimtex'
 
 call plug#end()
 
