@@ -63,12 +63,13 @@ Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 Plugin 'altercation/vim-colors-solarized'
+
 "Plugin 'lervag/vimtex'
 "Plugin 'gilligan/vim-lldb'
 "Plugin 'mattn/emmet-vim'
 call vundle#end()
 
-call plug#begin("~/.config/nvim/bundle/")
+call plug#begin("~/.vim/bundle/")
 
 Plug 'Valloric/YouCompleteMe'
 Plug 'lervag/vimtex'
@@ -96,18 +97,13 @@ map <F4> :SyntasticInfo<cr>
 map <F5> :TagbarToggle<cr>
 map <F6> :lclose<cr>
 map <F8> :pclose<cr>
-
-
-"" To Horizontal switch the tabs
-"map <F12> :windo wincmd K<cr>
-
-"" To Vertical switch the tabs
 map <F12> :windo wincmd H<cr>
 
 "colorscheme solarized
 "execute pathogen#infect()
 
 let mapleader = ","
+let maplocalleader = ","
 :inoremap ( ()<Esc>i
 :inoremap [ []<Esc>i
 :inoremap { {}<Esc>i
@@ -115,8 +111,8 @@ let mapleader = ","
 :inoremap ' ''<Esc>i
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" Syntastic Options and Configuration
 
 set statusline+=%#warningmsg#
@@ -143,16 +139,22 @@ let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_c_checkers = ['gcc']
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" YouCompleteMe Options and Configuration
 
 let g:ycm_show_diagnostics_ui = 0 "default 1
 let g:ycm_key_invoke_completion = '<C-Space>'
 
-" will put icons in Vim's gutter on lines that have a diagnostic set.
-" Turning this off will also turn off the YcmErrorLine and YcmWarningLine
-" highlighting
+" Make YCM compatible with UltiSnips
+let g:ycm_key_list_select_completion = ['<s-tab>', '<Down>', '<C-j>']
+let g:ycm_key_list_previous_completion = ['<c-tab>', '<Up>', '<C-k>']
+
+if(!exists('g:ycm_semantic_triggers'))
+    let g:ycm_semantic_triggers = {}
+endif
+let g:ycm_semantic_triggers.tex = g:vimtex#re#youcompleteme
+
 
 "let g:ycm_enable_diagnostic_signs = 1
 "let g:ycm_enable_diagnostic_highlighting = 0
@@ -177,13 +179,8 @@ let g:ycm_key_invoke_completion = '<C-Space>'
 "nnoremap <F10> :YcmForceCompileAndDiagnostics <CR>
 
 
-" Make YCM compatible with UltiSnips
-let g:ycm_key_list_select_completion = ['<s-tab>', '<Down>', '<C-j>']
-let g:ycm_key_list_previous_completion = ['<c-tab>', '<Up>', '<C-k>']
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" UltiSnips Options and Configuration
 
 " Better key bindings for UltiSnipsExpandTrigger
