@@ -1,6 +1,5 @@
 runtime! debian.vim
 
-
 " Uncomment the following to have Vim jump to the last position when
 " reopening a file
 "if has("autocmd")
@@ -64,14 +63,16 @@ Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'lervag/vimtex'
 "Plugin 'gilligan/vim-lldb'
 "Plugin 'mattn/emmet-vim'
-
 call vundle#end()
+
 call plug#begin("~/.config/nvim/bundle/")
+
 Plug 'Valloric/YouCompleteMe'
-"Plug 'critiqjo/lldb.nvim'
-"Plug 'neovim/python-client'
+""Plug 'lervag/vimtex'
+
 call plug#end()
 
 filetype plugin indent on
