@@ -46,3 +46,6 @@
 [submodule "bundle/nerdcommenter"]
 	path = bundle/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter.git
+[submodule "bundle/javacomplete2"]
+	path = bundle/javacomplete2
+	url = https://github.com/artur-shaik/vim-javacomplete2.git

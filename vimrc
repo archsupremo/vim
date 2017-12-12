@@ -54,20 +54,21 @@ call vundle#begin()
 
 Plugin 'nerdtree'
 Plugin 'tagbar'
-Plugin 'scrooloose/syntastic'
 Plugin 'nerdcommenter'
 Plugin 'tern_for_vim'
+Plugin 'javacomplete2'
+Plugin 'scrooloose/syntastic'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 Plugin 'altercation/vim-colors-solarized'
-
 "Plugin 'lervag/vimtex'
 "Plugin 'gilligan/vim-lldb'
 "Plugin 'mattn/emmet-vim'
 call vundle#end()
+autocmd FileType java setlocal omnifunc=javacomplete#Complete
 
 call plug#begin("~/.vim/bundle/")
 
@@ -95,8 +96,8 @@ map <F2> :NERDTreeToggle<cr>
 map <F3> :tabnext<cr>
 map <F4> :SyntasticInfo<cr>
 map <F5> :TagbarToggle<cr>
-map <F6> :lclose<cr>
-map <F8> :pclose<cr>
+map <F6> :JCimportsAddMissing<cr>
+map <F7> :JCimportsRemoveUnused<cr>
 map <F12> :windo wincmd H<cr>
 
 "colorscheme solarized
@@ -138,6 +139,18 @@ let g:syntastic_style_warning_symbol = '⚠'
 let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_c_checkers = ['gcc']
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" UltiSnips Options and Configuration
+
+" Better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<c-tab>"
+let g:UltiSnipsJumpForwardTrigger = "<c-tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+let g:UltiSnipsListSnippets = "<c-l>"
+
+let g:tern_show_argument_hints = 'on_hold'
+let g:tern_show_signature_in_pum = 0
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -178,16 +191,3 @@ let g:ycm_semantic_triggers.tex = g:vimtex#re#youcompleteme
 "
 "nnoremap <F10> :YcmForceCompileAndDiagnostics <CR>
 
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"" UltiSnips Options and Configuration
-
-" Better key bindings for UltiSnipsExpandTrigger
-let g:UltiSnipsExpandTrigger = "<c-tab>"
-let g:UltiSnipsJumpForwardTrigger = "<c-tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
-let g:UltiSnipsListSnippets = "<c-l>"
-
-let g:tern_show_argument_hints = 'on_hold'
-let g:tern_show_signature_in_pum = 0
