@@ -7,18 +7,12 @@
 [submodule "bundle/vim-colors-solarized"]
 	path = bundle/vim-colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized
-[submodule "bundle/tern_for_vim"]
-	path = bundle/tern_for_vim
-	url = https://github.com/ternjs/tern_for_vim.git
 [submodule "bundle/tagbar"]
 	path = bundle/tagbar
 	url = https://github.com/majutsushi/tagbar.git
 [submodule "bundle/scss-syntax.vim"]
 	path = bundle/scss-syntax.vim
 	url = https://github.com/cakebaker/scss-syntax.vim.git
-[submodule "bundle/nerdtree"]
-	path = bundle/nerdtree
-	url = https://github.com/scrooloose/nerdtree.git
 [submodule "bundle/tlib_vim"]
 	path = bundle/tlib_vim
 	url = https://github.com/tomtom/tlib_vim.git
@@ -49,3 +43,9 @@
 [submodule "bundle/javacomplete2"]
 	path = bundle/javacomplete2
 	url = https://github.com/artur-shaik/vim-javacomplete2.git
+[submodule "bundle/nerdtree"]
+	path = bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule "bundle/tern_for_vim"]
+	path = bundle/tern_for_vim
+	url = https://github.com/ternjs/tern_for_vim.git
