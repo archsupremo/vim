@@ -52,11 +52,11 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Plugin 'nerdtree'
-Plugin 'tagbar'
-Plugin 'nerdcommenter'
-Plugin 'tern_for_vim'
-Plugin 'javacomplete2'
+Plugin 'scrooloose/nerdtree'
+Plugin 'majutsushi/tagbar'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'ternjs/tern_for_vim'
+Plugin 'artur-shaik/vim-javacomplete2'
 Plugin 'scrooloose/syntastic'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -64,8 +64,7 @@ Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 Plugin 'altercation/vim-colors-solarized'
-"Plugin 'lervag/vimtex'
-"Plugin 'gilligan/vim-lldb'
+
 "Plugin 'mattn/emmet-vim'
 call vundle#end()
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
@@ -73,6 +72,8 @@ autocmd FileType java setlocal omnifunc=javacomplete#Complete
 call plug#begin("~/.vim/bundle/")
 
 Plug 'Valloric/YouCompleteMe'
+Plug 'critiqjo/lldb.nvim'
+Plug 'neovim/python-client'
 Plug 'lervag/vimtex'
 
 call plug#end()
