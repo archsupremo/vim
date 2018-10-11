@@ -44,7 +44,7 @@ filetype off
 call plug#begin("~/.vim/bundle/")
 Plug 'VundleVim/Vundle.vim'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
-Plug 'critiqjo/lldb.nvim'
+Plug 'gilligan/vim-lldb'
 Plug 'neovim/python-client'
 Plug 'lervag/vimtex'
 call plug#end()
