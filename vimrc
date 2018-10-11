@@ -1,29 +1,23 @@
 runtime! debian.vim
 
-" Uncomment the following to have Vim jump to the last position when
-" reopening a file
+if has("syntax")
+  syntax on
+endif
+
 "if has("autocmd")
 "  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 "endif
 
-" Uncomment the following to have Vim load indentation rules and plugins
-" according to the detected filetype.
 "if has("autocmd")
 "  filetype plugin indent on
 "endif
 
-" The following are commented out as they cause vim to behave a lot
-" differently from regular Vi. They are highly recommended though.
-"
 "set showcmd   	  	" Show (partial) command in status line.
 "set smartcase 	  	" Do smart case matching
 "set hidden    	  	" Hide buffers when they are abandoned
 "set mouse=a   	  	" Enable mouse usage (all modes)
 
-if has("syntax")
-  syntax on
-endif
-
+set statusline=%f\ %l,%c
 set background=dark
 set showmatch  	  	" Show matching brackets.
 set ignorecase 	  	" Do case insensitive matching
@@ -35,23 +29,28 @@ set autoindent
 set nu
 set tabstop=4 shiftwidth=4
 set expandtab
-setlocal omnifunc=syntaxcomplete#Complete
-set splitright
-
-" Source a global configuration file if available
-if filereadable("/etc/vim/vimrc.local")
-  source /etc/vim/vimrc.local
-endif
+set foldmethod=syntax
+""set nofoldenable
+""set foldmethod=indent
+""set foldnestmax=10
+""set foldlevel=1
 
 set list listchars=tab:→\ ,trail:·
+setlocal omnifunc=syntaxcomplete#Complete
 
 set nocompatible
-
 filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin("~/.vim/bundle/")
+call plug#begin("~/.config/nvim/bundle/")
+Plug 'VundleVim/Vundle.vim'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
+Plug 'critiqjo/lldb.nvim'
+Plug 'neovim/python-client'
+Plug 'lervag/vimtex'
+call plug#end()
 
+set rtp+=~/.config/nvim/bundle/Vundle.vim
+call vundle#begin("~/.config/nvim/bundle/")
 Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdcommenter'
@@ -64,44 +63,22 @@ Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 Plugin 'altercation/vim-colors-solarized'
-
-"Plugin 'mattn/emmet-vim'
+Plugin 'othree/html5.vim'
+Plugin 'mattn/emmet-vim'
 call vundle#end()
-autocmd FileType java setlocal omnifunc=javacomplete#Complete
-
-call plug#begin("~/.vim/bundle/")
-
-Plug 'Valloric/YouCompleteMe'
-Plug 'critiqjo/lldb.nvim'
-Plug 'neovim/python-client'
-Plug 'lervag/vimtex'
-
-call plug#end()
 
 filetype plugin indent on
-
-""""nnoremap th  :tabfirst<CR>
-""""nnoremap tj  :tabnext<CR>
-""""nnoremap tk  :tabprev<CR>
-""""nnoremap tl  :tablast<CR>
-""""nnoremap tt  :tabedit<Space>
-""""nnoremap tn  :tabnext<Space>
-""""nnoremap tm  :tabm<Space>
-""""nnoremap td  :tabclose<CR>
-""""
-""""" Alternatively use
-""""""nnoremap th :tabnext<CR>
-""""""nnoremap tl :tabprev<CR>
+autocmd FileType java setlocal omnifunc=javacomplete#Complete
 
 map <F2> :NERDTreeToggle<cr>
 map <F3> :tabnext<cr>
-map <F4> :SyntasticInfo<cr>
+map <F4> :tabprev<cr>
 map <F5> :TagbarToggle<cr>
 map <F6> :JCimportsAddMissing<cr>
 map <F7> :JCimportsRemoveUnused<cr>
+map <F8> <Plug>LLBreakSwitch
 map <F12> :windo wincmd H<cr>
 
-"colorscheme solarized
 "execute pathogen#infect()
 
 let mapleader = ","
@@ -112,9 +89,8 @@ let maplocalleader = ","
 :inoremap " ""<Esc>i
 :inoremap ' ''<Esc>i
 
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" Syntastic Options and Configuration
 
 set statusline+=%#warningmsg#
@@ -123,13 +99,13 @@ set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_signs = 1
 let g:syntastic_aggregate_errors = 1
 let g:syntastic_auto_jump = 1
 let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
-let g:syntastic_loc_list_height = 3
+let g:syntastic_loc_list_height = 15
 
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
@@ -138,12 +114,21 @@ let g:syntastic_style_warning_symbol = '⚠'
 
 " Checkers para los distintos lenguajes.
 let g:syntastic_javascript_checkers = ['jshint']
-let g:syntastic_c_checkers = ['gcc']
-let g:syntastic_cpp_compiler = "g++"
-let g:syntastic_cpp_compiler_options = "-pthread -std=c++11 -Wl,--no-as-needed"
+"let g:syntastic_c_checkers = []
+"let g:syntastic_cpp_checkers = ['clang_check']
+"let g:syntastic_cpp_remove_include_errors = 1
+"let g:syntastic_c_remove_include_errors = 1
+"let g:syntastic_cpp_include_dirs = []
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:syntastic_cpp_compiler = "g++"
+let g:syntastic_cpp_compiler_options = "-std=c++11 -pthread -Wl,--no-as-needed"
+let g:syntastic_cpp_config_file = ".syntastic_cpp_config"
+
+let g:syntastic_mode_map = { 'passive_filetypes': [''] }
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" UltiSnips Options and Configuration
 
 " Better key bindings for UltiSnipsExpandTrigger
@@ -155,8 +140,8 @@ let g:UltiSnipsListSnippets = "<c-l>"
 let g:tern_show_argument_hints = 'on_hold'
 let g:tern_show_signature_in_pum = 0
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" YouCompleteMe Options and Configuration
 
 let g:ycm_show_diagnostics_ui = 0 "default 1
@@ -172,7 +157,6 @@ endif
 let g:ycm_semantic_triggers.tex = g:vimtex#re#youcompleteme
 let g:ycm_confirm_extra_conf = 0
 
-
 "let g:ycm_enable_diagnostic_signs = 1
 "let g:ycm_enable_diagnostic_highlighting = 0
 "let g:ycm_always_populate_location_list = 1 "default 0
@@ -180,7 +164,7 @@ let g:ycm_confirm_extra_conf = 0
 "
 "let g:ycm_complete_in_strings = 1 "default 1
 "let g:ycm_collect_identifiers_from_tags_files = 0 "default 0
-"let g:ycm_path_to_python_interpreter = '' "default ''
+"let g:ycm_path_to_python_interpreter = '/usr/bin/python3' "default ''
 "
 "let g:ycm_server_use_vim_stdout = 0 "default 0 (logging to console)
 "let g:ycm_server_log_level = 'info' "default info
