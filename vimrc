@@ -41,7 +41,7 @@ setlocal omnifunc=syntaxcomplete#Complete
 set nocompatible
 filetype off
 
-call plug#begin("~/.config/nvim/bundle/")
+call plug#begin("~/.vim/bundle/")
 Plug 'VundleVim/Vundle.vim'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
 Plug 'critiqjo/lldb.nvim'
@@ -50,7 +50,7 @@ Plug 'lervag/vimtex'
 call plug#end()
 
 set rtp+=~/.config/nvim/bundle/Vundle.vim
-call vundle#begin("~/.config/nvim/bundle/")
+call vundle#begin("~/.vim/bundle/")
 Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdcommenter'
