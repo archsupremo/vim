@@ -49,3 +49,9 @@
 [submodule "bundle/tern_for_vim"]
 	path = bundle/tern_for_vim
 	url = https://github.com/ternjs/tern_for_vim.git
+[submodule "bundle/lldb.nvim"]
+	path = bundle/lldb.nvim
+	url = http://github.com/critiqjo/lldb.nvim.git
+[submodule "bundle/python-client"]
+	path = bundle/python-client
+	url = http://github.com/neovim/python-client.git
