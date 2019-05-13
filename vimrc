@@ -49,7 +49,7 @@ Plug 'neovim/python-client'
 Plug 'lervag/vimtex'
 call plug#end()
 
-set rtp+=~/.config/nvim/bundle/Vundle.vim
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin("~/.vim/bundle/")
 Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
